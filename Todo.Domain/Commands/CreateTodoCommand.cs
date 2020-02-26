@@ -26,7 +26,6 @@ namespace Todo.Domain.Commands
                 new Contract()
                     .Requires()
                     .HasMinLen(Title, 3, "Title", "O título tem que ter pelo menos 3 caracteres." )
-                    .IsNull(Date, "Date", "A data é obrigatória." )
                     .HasMinLen(User, 6, "User", "O Usuário é obrigatório." )
                 );
         }
