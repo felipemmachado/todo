@@ -6,6 +6,6 @@ namespace Todo.Domain.Handlers.Contracts
     public interface IHandler<T> where T : ICommand
     {
         // sempre retorna um ICommandResult de um metodo Handle que recebe um comando
-        IcommandResult Handle(ICommand command);
+        IcommandResult Handle(T command);
     }
 }
