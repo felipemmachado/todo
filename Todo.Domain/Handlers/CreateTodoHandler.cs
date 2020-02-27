@@ -7,11 +7,11 @@ using Todo.Domain.Repositories;
 
 namespace Todo.Domain.Handlers
 {
-    public class CreateTodohandler : Notifiable, IHandler<CreateTodoCommand>
+    public class CreateTodoHandler : Notifiable, IHandler<CreateTodoCommand>
     {
         private readonly ITodoRepository _repository;
 
-        public CreateTodohandler(ITodoRepository repository)
+        public CreateTodoHandler(ITodoRepository repository)
         {
             _repository = repository;
         }
