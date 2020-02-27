@@ -1,0 +1,31 @@
+(partindo do pre-suposto que já tenha o banco criado e já está configurado na aplicacao)
+
+Entity Framework
+// cria migracao (--startup-project) caso de erro
+// o --startup-project é requerido quando vc está rodando os comando no projeto de lib.. ele precisa de ex para rodar	
+dotnet ef migrations add initialCreate --startup-project ../[a referencia do seu projeto execultavael]
+
+// para atualizar o banco
+dotnet ef database update --startup-project ..\Todo.Domain.API\
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBiPT_hUsWLcp-MGttluPbGle0HujtZigc",
+    authDomain: "todo-cd097.firebaseapp.com",
+    databaseURL: "https://todo-cd097.firebaseio.com",
+    projectId: "todo-cd097",
+    storageBucket: "todo-cd097.appspot.com",
+    messagingSenderId: "575692797125",
+    appId: "1:575692797125:web:734f52e9c8c4dfe2a7acac"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
