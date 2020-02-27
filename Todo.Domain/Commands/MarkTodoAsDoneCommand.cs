@@ -24,9 +24,7 @@ namespace Todo.Domain.Commands
             AddNotifications(
                 new Contract()
                     .Requires()
-                    .IsNull(Id, "Id", "O id é obrigatório.")
                     .HasMinLen(User, 6, "User", "Usuário inválido.")
-
                 );
         }
     }
