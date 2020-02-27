@@ -11,7 +11,7 @@ namespace Todo.Domain.Tests.HandlerTests
 
         private readonly UpdateTodoCommand _validCommand = new UpdateTodoCommand("Titulo 2", Guid.NewGuid(), "felipemmachado28");
         private readonly UpdateTodoCommand _invalidCommand = new UpdateTodoCommand("", Guid.NewGuid(), "");
-
+        private readonly UpdateTodoCommand _invalidCommandUser = new UpdateTodoCommand("Titulo 2", Guid.NewGuid(), "felipe");
         private readonly UpdateTodoHandler _handler = new UpdateTodoHandler(new FakeTodoRepository());
 
         [Fact]
@@ -26,6 +26,14 @@ namespace Todo.Domain.Tests.HandlerTests
         public void Dado_um_comando_invalido_deve_interromper_a_execucao()
         {
             var result = (GenericCommandResult)_handler.Handle(_invalidCommand);
+            Assert.False(result.Success);
+        }
+
+
+        [Fact]
+        public void Dado_um_usuario_invalido_deve_interromper_a_execucao()
+        {
+            var result = (GenericCommandResult)_handler.Handle(_invalidCommandUser);
             Assert.False(result.Success);
         }
     }

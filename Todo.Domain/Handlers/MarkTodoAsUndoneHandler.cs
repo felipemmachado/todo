@@ -26,6 +26,9 @@ namespace Todo.Domain.Handlers
             // recuperar o TodoItem (rehitraçao)
             var todo = _repository.GetById(command.Id, command.User);
 
+            if(todo == null)
+                return new GenericCommandResult(false, "Ops, tarefa não encontrada.",  null);
+
             // seta desfeito
             todo.MarkAsUndone();
 

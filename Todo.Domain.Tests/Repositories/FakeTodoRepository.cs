@@ -48,9 +48,10 @@ namespace Todo.Domain.Tests.Repositories
 
         public TodoItem GetById(Guid id, string user)
         {
-            var todo = new TodoItem("Titulo 1", new DateTime(), "felipemmachado28");
+            if(user != "felipemmachado28")
+                return null;
 
-            return todo;
+            return new TodoItem("Titulo 1", new DateTime(), "felipemmachado28");
         }
 
         public void Update(TodoItem todo)
