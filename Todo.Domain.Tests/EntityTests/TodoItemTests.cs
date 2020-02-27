@@ -2,7 +2,7 @@ using System;
 using Todo.Domain.Entities;
 using Xunit;
 
-namespace Todo.Domain.Tests.EntitiesTests
+namespace Todo.Domain.Tests.EntityTests
 {
 
     public class TodoItemTests
