@@ -11,7 +11,7 @@ namespace Todo.Domain.Tests.HandlerTests
     {
         private readonly MarkTodoAsDoneCommand _validCommand = new MarkTodoAsDoneCommand(Guid.NewGuid(), "felipemmachado28");
         private readonly MarkTodoAsDoneCommand _invalidCommand = new MarkTodoAsDoneCommand(Guid.NewGuid(), "");
-        private readonly TodoHandler _handler = new TodoHandler(new FakeTodoRepository());
+        private readonly MarkTodoAsDoneHandler _handler = new MarkTodoAsDoneHandler(new FakeTodoRepository());
 
         [Fact]
         public void Dado_um_comando_valido_marca_como_feito()

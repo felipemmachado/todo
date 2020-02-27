@@ -12,7 +12,7 @@ namespace Todo.Domain.Tests.HandlerTests
         private readonly UpdateTodoCommand _validCommand = new UpdateTodoCommand("Titulo 2", Guid.NewGuid(), "felipemmachado28");
         private readonly UpdateTodoCommand _invalidCommand = new UpdateTodoCommand("", Guid.NewGuid(), "");
 
-        private readonly TodoHandler _handler = new TodoHandler(new FakeTodoRepository());
+        private readonly UpdateTodoHandler _handler = new UpdateTodoHandler(new FakeTodoRepository());
 
         [Fact]
         public void Dado_um_comando_valido_atualiza_o_todo()
